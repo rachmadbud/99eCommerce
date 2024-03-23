@@ -21,6 +21,7 @@
                         <thead>
                             <tr>
                                 <th class="product-thumbnail">No</th>
+                                <th class="product-thumbnail">-</th>
                                 <th class="product-name">Kode Transaksi</th>
                                 <th class="product-thumbnail">Total</th>
                                 <th class="product-thumbnail">Bukti Transaksi</th>
@@ -32,6 +33,8 @@
                             @foreach ($dataTransaksi as $item)
                                 <tr>
                                     <td class="product-thumbnail">{{ $loop->iteration }}</td>
+                                    <td class="product-thumbnail"><a
+                                            href="{{ route('detail', $item->kode_transaksi) }}">Detail</a></td>
                                     <td class="product-thumbnail">{{ $item->kode_transaksi }}</td>
                                     <td class="product-thumbnail">{{ $item->total }}</td>
                                     <td class="product-name">
@@ -76,6 +79,30 @@
                             @endforeach
                         </tbody>
                     </table>
+                </div>
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="text-black h4" for="coupon">Payment</label>
+                                    <p>Anda dapat bayar ke rekening yg tertera...</p>
+                                </div>
+                                <div class="col-md-8 mb-3 mb-md-0">
+                                    <h3 class="d-flex align-items-center"><span class="me-1">
+                                            <img src="{{ asset('assets/images/paypal.png') }}" alt="Image"
+                                                class="img-fluid" style="width: 90px; height: 50px;"></span><span>
+                                            : 123-456-7890 </span></h3>
+                                    <br>
+                                    <h3 class="d-flex align-items-center"><span class="me-1">
+                                            <img src="{{ asset('assets/images/visa.png') }}" alt="Image"
+                                                class="img-fluid" style="width: 90px; height: 50px;"></span><span>
+                                            : 5678-9012-34. </span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

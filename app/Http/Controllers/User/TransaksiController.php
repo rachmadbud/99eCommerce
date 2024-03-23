@@ -36,4 +36,13 @@ class TransaksiController extends Controller
 
         return redirect()->to('/transaksi')->with('message', 'Berhasil upload bukti transaksi...!!');
     }
+
+    public function detail($item)
+    {
+        $kode_transaksi = $item;
+        $stmtDetail = $this->modelTransaksi->detailTransaksiUser($kode_transaksi);
+        // return $stmtDetail;
+
+        return view('user.detailTransaksi')->with('stmtDetail', $stmtDetail);
+    }
 }

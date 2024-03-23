@@ -36,7 +36,7 @@
                                         </td>
                                         <td class="product-name">
                                             <h2 class="h5 text-black">{{ $item->nama }}</h2>
-                                            <input type="text" name="barang[]" value="{{ $item->id }}" hidden>
+                                            <input type="text" name="barang[]" value="{{ $item->id_barang }}" hidden>
                                         </td>
                                         <td>{{ 'Rp ' . number_format($item->harga, 0, ',', '.') }}</td>
                                         <td><a href="{{ route('deleteItemChart', $item->id) }}"

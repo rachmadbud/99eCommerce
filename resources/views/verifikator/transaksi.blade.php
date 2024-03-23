@@ -1,5 +1,5 @@
 @extends('verifikator.partials.master')
-@section('title', 'Transaksi')
+@section('title', 'Detail Transaksi')
 @section('content')
 
     <div class="container-fluid">
@@ -22,8 +22,10 @@
                             <thead>
                                 <tr align="center" class="alert-dark">
                                     <th>No.</th>
+                                    <th></th>
                                     <th>User</th>
                                     <th>Kode Transaksi</th>
+                                    <th>Total</th>
                                     <th>Bukti Transaksi</th>
                                     <th>Status</th>
                                 </tr>
@@ -31,9 +33,13 @@
                             <tbody>
                                 @foreach ($dataTransaksi as $item)
                                     <tr>
-                                        <td align="center">1</td>
+                                        <td align="center">{{ $loop->iteration }}</td>
+                                        <td align="center"><a
+                                                href="{{ route('verifikator.detail', $item->kode_transaksi) }}">Detail</a>
+                                        </td>
                                         <td align="left">{{ $item->name }}</td>
                                         <td align="left">{{ $item->kode_transaksi }}</td>
+                                        <td align="left"> {{ 'Rp ' . number_format($item->total, 0, ',', '.') }}</td>
                                         <td align="center">
                                             @if ($item->bukti == null)
                                                 <img src="https://placehold.co/190x190?text=Belum+Ada+Transaksi"

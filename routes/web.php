@@ -18,4 +18,6 @@ Route::get('/deleteItemChart/{item}', [App\Http\Controllers\User\ChartController
 
 Route::get('/transaksi', [App\Http\Controllers\User\TransaksiController::class, 'transaksi'])->name('transaksi');
 
+Route::get('/detail/{item}', [App\Http\Controllers\User\TransaksiController::class, 'detail'])->name('detail');
+
 Route::put('/updateImage/{item}', [App\Http\Controllers\User\TransaksiController::class, 'updateImage'])->name('updateImage');

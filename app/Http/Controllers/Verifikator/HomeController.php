@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    public function __construct()
+    {
+        $this->modelTransaksi = new \App\Models\Transaksi();
+    }
     public function transaksi()
     {
         $dataTransaksi = DB::table('transaksi')
@@ -34,5 +38,14 @@ class HomeController extends Controller
             'bukti' => $data->bukti
         ]);
         return redirect()->back();
+    }
+
+    public function detail($item)
+    {
+        $kode_transaksi = $item;
+        $stmtDetail = $this->modelTransaksi->detailTransaksiUser($kode_transaksi);
+        // return $stmtDetail;
+
+        return view('verifikator.detailTransaksi')->with('stmtDetail', $stmtDetail);
     }
 }

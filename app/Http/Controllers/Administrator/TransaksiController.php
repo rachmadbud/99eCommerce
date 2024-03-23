@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\DB;
 
 class TransaksiController extends Controller
 {
+    public function __construct()
+    {
+        $this->modelTransaksi = new \App\Models\Transaksi();
+    }
     public function transaksi()
     {
         $dataTransaksi = DB::table('transaksi')
@@ -19,6 +23,15 @@ class TransaksiController extends Controller
         // return $dataTransaksi;
 
         return view('administrator.transaksi')->with('dataTransaksi', $dataTransaksi);
+    }
+
+    public function detail($item)
+    {
+        $kode_transaksi = $item;
+        $stmtDetail = $this->modelTransaksi->detailTransaksiUser($kode_transaksi);
+        // return $stmtDetail;
+
+        return view('administrator.detailTransaksi')->with('stmtDetail', $stmtDetail);
     }
 
     public function update(Request $request, $item)

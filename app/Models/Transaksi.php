@@ -46,4 +46,15 @@ class Transaksi extends Model
 
         return $stmtInputDetailTransaksi;
     }
+
+    public function detailTransaksiUser($kode_transaksi)
+    {
+        $stmtDetailTransaksiUser = DB::table('detail_transaksi')
+            ->join('users', 'detail_transaksi.id_user', '=', 'users.id')
+            ->join('barang', 'detail_transaksi.barang', '=', 'barang.id')
+            ->where('kode_transaksi', $kode_transaksi)
+            ->get();
+
+        return $stmtDetailTransaksiUser;
+    }
 }

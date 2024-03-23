@@ -20,8 +20,8 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        DB::table('barang')->insert(['img' => 'kdjabcak2kjw32.png', 'nama' => 'sepatu eiger', 'harga' => 1200000]);
-        DB::table('barang')->insert(['img' => 'iduygsjdccadcs2.png', 'nama' => 'Everest 50L Consina', 'harga' => 2000000]);
+        DB::table('barang')->insert(['img' => 'user/img/eigerShouse.jpg', 'nama' => 'sepatu eiger', 'harga' => 1200000]);
+        DB::table('barang')->insert(['img' => 'user/img/everestTitaniumConsina.jpg ', 'nama' => 'Everest 50L Consina', 'harga' => 2000000]);
     }
 
     /**

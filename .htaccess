@@ -3,6 +3,12 @@
         Options -MultiViews -Indexes
     </IfModule>
 
+    # Hide .env file
+        <FilesMatch "^\.env">
+            Order allow,deny
+            Deny from all
+        </FilesMatch>
+
     RewriteEngine On
 
     # Handle Authorization Header

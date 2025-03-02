@@ -10,12 +10,13 @@ class AdministratorUserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     * php artisan db:seed --class=AdministratorUserSeeder
      */
     public function run(): void
     {
         $user = User::create([
             'name' => 'Administrator',
-            'email' => 'administrator@mail.com',
+            'email' => '    ',
             'password' => bcrypt('12345678')
         ]);
 

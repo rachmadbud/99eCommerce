@@ -10,6 +10,7 @@ class VerifikatorUserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     * php artisan db:seed --class=VerifikatorUserSeeder
      */
     public function run(): void
     {

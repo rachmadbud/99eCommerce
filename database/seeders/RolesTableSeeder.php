@@ -10,6 +10,7 @@ class RolesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     * php artisan db:seed --class=RolesTableSeeder
      */
     public function run(): void
     {
